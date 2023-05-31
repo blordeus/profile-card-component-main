@@ -1,6 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
 
-$font-stack: font-family: 'Kumbh Sans', sans-serif;
+$font-stack: 'Kumbh Sans', sans-serif;
+$background: hsl(185,75%,39%);
+$grayblue: hsl(227,10%,46%);
+$darkblue: hsl(229,23%,23%);
+
+@mixin bold {
+    font-family: $font-stack;
+    font-weight: 700;
+    color: $darkblue;
+    font-size: 18px;
+}
+
+@mixin text {
+    font-family: $font-stack;
+    font-weight: 400;
+    color: $grayblue;
+    font-size: 14px;
+}
+
+@mixin background {
+    background: url(./images/bg-pattern-top.svg) left top no-repeat, url(./images/bg-pattern-bottom.svg) right bottom no-repeat;
+    background-color: $background;
+}
+
+@mixin card {
+    padding: 10%;
+}
+
+main {
+    padding: 0;
+    margin: 0;
+}
 
 .attribution { 
     font-size: 11px; 
@@ -10,3 +41,33 @@ $font-stack: font-family: 'Kumbh Sans', sans-serif;
 .attribution a { 
     color: hsl(228, 45%, 44%); 
 }
+
+.card {
+
+}
+
+.background {
+   @include background;
+}
+
+.pattern {
+    width: 100%;
+    height: 100%;
+}
+
+.pattern-container {
+    background-image: url(./images/bg-pattern-card.svg);
+}
+
+.container {
+    background-color: white;
+}
+
+.bold {
+  @include bold;
+}
+
+.text {
+  @include text;
+}
+
